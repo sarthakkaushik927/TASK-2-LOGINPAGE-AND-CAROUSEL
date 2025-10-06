@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <div class="navbar">
+            <button class="nav-tab active" onclick="showTab('registration')">Registration Form</button>
+            <button class="nav-tab" onclick="showTab('carousel')">Carousel</button>
+        </div>
+
+        <!-- Registration Form Tab -->
+        <div id="registration" class="tab-content active">
+            <h2>Registration Form</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label>Name *</label>
+                    <input type="text" id="name" required>
+                    <div class="error-message" id="nameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="text" id="email" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Contact Number *</label>
+                    <input type="text" id="contact" required>
+                    <div class="error-message" id="contactError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender *</label>
+                    <select id="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <div class="error-message" id="genderError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Password *</label>
+                    <input type="password" id="password">
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm Password *</label>
+                    <input type="password" id="confirmPassword">
+                    <div class="error-message" id="confirmPasswordError"></div>
+                </div>
+
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+            <div class="success-message" id="successMessage">
+                Registration Successful!
+            </div>
+        </div>
+
+        <!-- Carousel Tab -->
+        <div id="carousel" class="tab-content">
+            <h2>Image Carousel</h2>
+            
+            <div class="carousel">
+                <div class="carousel-slide active">
+                    <img src="https://picsum.photos/800/400?random=1" alt="Image 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/800/400?random=2" alt="Image 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/800/400?random=3" alt="Image 3">
+                </div>
+                <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+                <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
+            </div>
+
+            <div class="rating-container">
+                <p><strong>Rate this image:</strong></p>
+                <span class="star" onclick="rateImage(1)">★</span>
+                <span class="star" onclick="rateImage(2)">★</span>
+                <span class="star" onclick="rateImage(3)">★</span>
+                <span class="star" onclick="rateImage(4)">★</span>
+                <span class="star" onclick="rateImage(5)">★</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
