@@ -19,7 +19,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Navigation Tabs */
+
 .navbar {
     background-color: #333;
     padding: 10px;
@@ -47,7 +47,7 @@ body {
     background-color: #4CAF50;
 }
 
-/* Tab Content */
+
 .tab-content {
     display: none;
     padding: 20px;
@@ -57,7 +57,6 @@ body {
     display: block;
 }
 
-/* Form Styles */
 h2 {
     text-align: center;
     color: #333;
@@ -127,7 +126,6 @@ input.error {
     text-align: center;
 }
 
-/* Carousel Styles */
 .carousel {
     position: relative;
     width: 100%;
@@ -183,7 +181,6 @@ input.error {
     right: 10px;
 }
 
-/* Star Rating Styles */
 .rating-container {
     text-align: center;
     margin-top: 20px;
