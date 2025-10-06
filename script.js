@@ -1,27 +1,23 @@
-// ========== TAB SWITCHING ==========
+
         function showTab(tabName) {
-            // Hide all tabs
+           
             var tabs = document.querySelectorAll('.tab-content');
             for (var i = 0; i < tabs.length; i++) {
                 tabs[i].classList.remove('active');
             }
 
-            // Remove active from all buttons
             var buttons = document.querySelectorAll('.nav-tab');
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].classList.remove('active');
             }
 
-            // Show selected tab
             document.getElementById(tabName).classList.add('active');
             event.target.classList.add('active');
         }
 
-        // ========== FORM VALIDATION ==========
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get all input values
             var name = document.getElementById('name').value;
             var email = document.getElementById('email').value;
             var contact = document.getElementById('contact').value;
@@ -30,11 +26,8 @@
             var confirmPassword = document.getElementById('confirmPassword').value;
             
             var isValid = true;
-
-            // Clear previous errors
             clearAllErrors();
 
-            // Validate Name (no numbers or special characters)
             if (name === '') {
                 showError('name', 'Name is required');
                 isValid = false;
@@ -43,7 +36,6 @@
                 isValid = false;
             }
 
-            // Validate Email
             if (email === '') {
                 showError('email', 'Email is required');
                 isValid = false;
@@ -52,7 +44,6 @@
                 isValid = false;
             }
 
-            // Validate Contact (10 digits only)
             if (contact === '') {
                 showError('contact', 'Contact number is required');
                 isValid = false;
@@ -61,13 +52,11 @@
                 isValid = false;
             }
 
-            // Validate Gender
             if (gender === '') {
                 showError('gender', 'Please select a gender');
                 isValid = false;
             }
 
-            // Validate Password
             if (password === '') {
                 showError('password', 'Password is required');
                 isValid = false;
@@ -88,7 +77,6 @@
                 isValid = false;
             }
 
-            // Validate Confirm Password
             if (confirmPassword === '') {
                 showError('confirmPassword', 'Please confirm your password');
                 isValid = false;
@@ -97,7 +85,6 @@
                 isValid = false;
             }
 
-            // If all validations pass
             if (isValid) {
                 document.getElementById('successMessage').style.display = 'block';
                 document.getElementById('registrationForm').reset();
@@ -122,18 +109,17 @@
             }
         }
 
-        // ========== CAROUSEL ==========
         var currentSlide = 0;
         var slides = document.querySelectorAll('.carousel-slide');
 
         function changeSlide(direction) {
-            // Hide current slide
+
             slides[currentSlide].classList.remove('active');
             
-            // Calculate new slide position
+
             currentSlide = currentSlide + direction;
             
-            // Loop back to start/end
+
             if (currentSlide >= slides.length) {
                 currentSlide = 0;
             }
@@ -141,26 +127,21 @@
                 currentSlide = slides.length - 1;
             }
             
-            // Show new slide
             slides[currentSlide].classList.add('active');
             
-            // Clear star rating
             clearStars();
         }
-
-        // ========== STAR RATING ==========
         var stars = document.querySelectorAll('.star');
         var currentRating = 0;
 
         function rateImage(rating) {
-            // If clicking same star, clear rating
+
             if (currentRating === rating) {
                 currentRating = 0;
             } else {
                 currentRating = rating;
             }
             
-            // Update star display
             updateStars();
         }
 
@@ -179,7 +160,6 @@
             updateStars();
         }
 
-        // Add hover effect for stars
         for (var i = 0; i < stars.length; i++) {
             stars[i].addEventListener('mouseenter', function() {
                 var hoverRating = Array.from(stars).indexOf(this) + 1;
